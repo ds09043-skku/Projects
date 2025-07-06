@@ -1,0 +1,555 @@
+@charset "utf-8";
+
+.line{
+    border:1px lightgray solid;
+}
+
+#calendar-container {
+    width: 1000px;
+    margin: 50px auto;
+    /* height:900px;
+    position: static;
+    overflow: hidden; */
+    
+}
+
+.fc {
+    max-height: 550px; /* 캘린더의 최대 높이 고정 */
+    overflow-y: auto;  /* 높이를 초과하면 세로 스크롤 활성화 */
+}
+
+/* 달력부분 */
+.fc .fc-media-screen{
+    display: block;
+    position: static;
+    overflow: hidden;
+}
+
+/* 일요일 날짜: 빨간색 */
+.fc .fc-day-sun a {
+    color: red;
+}
+  
+/* 토요일 날짜: 파란색 */
+.fc .fc-day-sat a {
+    color: blue;
+
+}
+
+/* 제목 볼드 빼기 */
+.fc .fc-toolbar-title {
+    font-weight: bold;
+    color:black;
+    font-size: 16px;
+    background-color: lightgray;
+}
+
+/* 일정표 툴 바  */
+.fc .fc-toolbar.fc-header-toolbar {
+    margin: 0;
+    background-color: lightgray;
+    height: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    font-size: 10px;
+    line-height: 40px;
+    color: black;
+    border-radius: 10px 10px 0px 0px;
+}
+
+/* 툴바의 버튼 */
+.fc .fc-toolbar-chunk .fc-button {
+    background-color: lightgray;
+    border: none;
+    padding:0;
+    margin: 0;
+    font-size: 14px;
+}
+
+.fc-toolbar-chunk {
+    background-color: lightgray;
+}
+
+.fc-toolbar-chunk:nth-child(1) {
+    width: 120px;
+    display: flex;
+    flex-direction: row;
+    row-gap: 1px;
+    margin:0px;
+}
+
+.fc-toolbar-chunk:nth-child(1) h2 {
+    margin-right: 12px;
+}
+
+.fc-toolbar-chunk:nth-child(3) {
+    float:right;
+    margin:0px;
+}
+
+.fc-toolbar-chunk:nth-child(3) .fc-listMonth-button {
+    padding: 1px;  
+    background-image: url("../assets/images/list.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-size: 0px;
+    color:transparent;
+    height: 20px;
+    width: 20px;
+    padding : 5px;
+}
+
+.fc-toolbar-chunk:nth-child(3) .fc-listMonth-button.fc-button-active:hover{
+    padding: 1px;  
+    background-image: url("../assets/images/list.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-size: 0px;
+    height: 20px;
+    width: 20px;
+    padding : 5px;
+    color:transparent;
+    border:0px;
+    margin:0px;
+}
+
+.fc-toolbar-chunk:nth-child(3) .fc-listMonth-button.fc-button-active{
+    display: none;
+}
+
+.fc-dayGridMonth-button.fc-button-primary{
+    background-image: url("../assets/images/calendar.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-size: 0;
+    height: 20px;
+    width: 20px;
+    padding : 5px;
+    color:transparent;
+    border:0px;
+    margin:0px;
+}
+
+.fc-dayGridMonth-button:hover{  
+    background-image: url("../assets/images/calendar.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-size: 0px;
+    height: 20px;
+    width: 20px;
+    padding : 5px;
+    color:transparent;
+    border:0px;
+    margin:0px;
+}
+
+.fc-dayGridMonth-button.fc-button-active{
+    display: none;
+}
+
+.fc-toolbar-chunk .fc-button .fc-icon{
+    background-color: lightgray;
+}
+
+/* 툴바 사용 불가 버튼 스타일 */
+.fc .fc-toolbar-chunk .fc-button:disabled {
+    color: lightgray;
+}
+/* 툴바 사용 불가 버튼 hover 시 스타일 주지 않기 */
+.fc .fc-toolbar-chunk .fc-button:disabled:hover {
+    background-color: transparent;
+}
+
+/* 툴바 버튼 포커스 시 그림자 제거 */
+.fc .fc-toolbar-chunk .fc-button:focus {
+    box-shadow: none;
+    color:black;
+    margin:0;
+    border:0;
+    padding:0;
+    background-color: transparent;
+}
+
+/* 툴바 버튼 시 배경색 변경 */
+.fc .fc-toolbar-chunk .fc-button {
+    background-color: lightgray;
+    color:black;
+    padding:0;
+    padding-bottom: 2px;
+}
+
+/* 툴바 버튼 hover 시 배경색 변경 */
+.fc .fc-toolbar-chunk .fc-button:hover {
+    /* font-weight: bolder;
+    font-size: 16px; */
+}
+
+/* 날짜변경 화살표 아이콘 */
+.fc .fc-button-primary span {
+    /* font-weight: 500;
+    font-size: 28px; */
+}
+
+/* 요일의 높이 */
+.fc-theme-standard th {
+    height: 30px;
+    background: #f5f5f5;
+    border: 1px solid #e8e8e8;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    color: #7b7b7b;
+    vertical-align: middle;
+}
+
+/* Tody Cell에 배경색 주기 */
+.fc .fc-daygrid-day.fc-day-today {
+    background-color: #e6895724;
+}
+
+/* 날짜 Cell 프레임 */
+.fc .fc-daygrid-day-frame {
+    padding: 5px;
+    font-size: 10px;
+    height: 85px;
+}
+
+/* 월간,주간 view의 Cell이 시작하는 위치 */
+.fc .fc-daygrid-day-top {
+    flex-direction: row;
+    height: 30px;
+    margin-bottom: 3px;
+}
+
+/* 날짜 숫자 z-index 초기화 */
+.fc .fc-daygrid-day-number {
+    z-index: auto !important;
+}
+
+/* 이벤트 막대 스타일 */
+.fc-event {
+    background-color: darkgray;
+    color:black;
+    padding: 3px;
+    border:0px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 8px;
+    width: 100%;
+}
+.fc-event-title-container {
+    background-color: darkgray;
+    color:black;
+    padding: 0;
+    text-align: center;
+}
+.fc-event-title{
+    background-color: darkgray;
+}
+.fc-daygrid-block-event{
+    width:100%;
+    border-radius:3px;
+    padding : 0px 0px;
+}
+
+
+/* 일별 이벤트 2개까지, oveflow 발생 시 관리*/
+/* .fc-daygrid-day-frame{
+    overflow: scroll;
+}
+.fc-daygrid-day-events {
+    overflow: scroll;
+} */
+.fc-theme-standard .fc-popover{
+    background-color: #f2f2f2;
+}
+.fc-popover{
+    padding:5px 15px;
+}
+.fc .fc-popover-header {
+    background-color: #f2f2f2;
+    padding:0px;
+    padding-top: 8px;
+}
+.fc-popover.fc-more-popover{
+    width: 230px;
+    /* overflow: scroll; */
+}
+.fc-more-popover-misc{
+    display: none;
+}
+.fc .fc-more-popover .fc-popover-body{
+    padding:10px 0px;
+    min-width: 198px;
+}
+.fc-popover-body{
+    overflow: scroll;
+}
+.fc-popover-body .fc-daygrid-event-harness{
+    min-width: 100%;
+    width: fit-content;
+    /* overflow: scroll; */
+    /* box-sizing: initial; */
+}
+.fc-popover-body .fc-daygrid-event-harness .fc-event-main{
+    width:100%;
+}
+.fc-daygrid-event-harness a{
+    pointer-events: none;
+}
+.fc-popover-title{
+    padding:0px;
+    display: flex;
+    justify-content: space-between;
+}
+.fc-popover-title{
+    flex:auto;
+}
+.fc-popover-close{
+    flex:none;
+}
+
+/*달력 이벤트 관리*/
+.fc-event-main{
+    width: 100px;
+    background-color: inherit;
+    margin:0;
+    
+    /* margin-right: 5px; */
+}
+
+.fc-h-event .fc-event-main{
+    width: 100%;
+    color:black;
+    background-color: inherit;
+}
+
+.event-favorite{
+    background-color: rgb(169, 169, 169);
+    /* z-index: 10; */
+}
+
+.event-favorite:hover{
+    background-color: darkgray;
+}
+
+.event-favorite-star{
+    font-size: 15px;
+    padding-bottom: 3.5px;
+    box-sizing: border-box;
+    background-color: inherit;
+    pointer-events: auto;
+}
+
+.event-title{
+    pointer-events: auto;
+}
+
+.favorite{
+    background-color: green;
+}
+
+.cal-custom-event{
+    display: flex;
+    justify-content: space-between;
+    width:100%;
+    background-color: inherit;
+    text-align: left;
+    overflow: scroll;
+    padding:0px 5px;
+    margin:auto;
+}
+
+.custom-event{
+    background-color: inherit;
+}
+
+.fc-popover-body .cal-custom-event{
+    background-color: inherit;
+    overflow:hidden;
+}
+
+.cal-custom-event .event-title{
+    background-color: inherit;
+    padding-top:6px;
+    color:black;
+}
+
+.event-title{
+    margin-right: 5px;
+}
+
+.fc-daygrid-event.fc-daygrid-dot-event{
+    padding:"0px";
+    margin:"0px";
+    border: "0px";
+}
+
+.fc-list-day-cushion.fc-cell-shaded{
+    padding: 5px 14px;
+    padding-top: 6px;
+    border-bottom: 1px rgb(57, 57, 57) solid;
+}
+
+.fc-list-day-text{
+    font-weight: bolder;
+    font-size: 15px;
+}
+
+.fc-list-event{
+    width:100%;
+}
+
+.fc-list-event-title{
+    padding:3px 14px;
+}
+
+.fc .fc-list-day-cushion, .fc .fc-list-table td {
+    padding: 0px 14px;
+}
+
+/* .fc-list-event-title.hide-event-title {
+    display: none !important;
+  } */
+
+/*다음달 날짜 삭제*/
+.fc-day-other-month {
+    display: none; /* 현재 월이 아닌 날짜를 숨김 */
+}
+
+
+/*리스트 부분*/
+.fc-list-day.fc-day.fc-day-tue{
+    font-size: 40px;
+    font-weight:bolder;
+    border-bottom: 1px black solid;
+}
+.fc-list-day,
+.fc-list-event-time, 
+.fc-list-event-graphic{
+    display: none;
+}
+.fc-event.fc-event-start.fc-event-end.fc-event-past.fc-list-event{
+    padding: 0px;
+}
+
+.fc-list-day.fc-list-event{
+    padding-bottom : 0px;
+    padding-top : 0px;
+}
+
+.fc-list-event-title{
+    width: 100%;
+    margin:0;
+    border: 0;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.fc-list-day-cushion.fc-cell-shaded{
+    text-align: left;
+    font-weight: bolder;
+}
+
+tr, th, td{
+    border: 0;
+}
+
+.fc-list-table {
+    border: 0;
+}
+
+.event-date{
+    padding-top: 5px;
+    text-align:right;
+}
+
+.fc-list-event-title{
+    border:0;
+}
+
+.fc-list-event{
+    border : 0;
+
+}
+
+.fc-event.fc-event-past.fc-list-event .fc-list-event-title{
+    border: none !important;
+}
+
+tr, th, td ::before, ::after{
+    border : 0px;
+    border-color: transparent;
+}
+
+.fc-theme-standard fd, .fc-theme-standard fh{
+    border : 0px;
+    border-color: transparent;
+}
+
+.fc-daygrid-event.fc-daygrid-dot-event{
+    padding:0px;
+    margin:0px;
+}
+
+.fc-list-day-cushion::after {
+    display: none !important; /* 구분선을 숨김 */
+}
+
+.fc-list-event-cushion::after {
+    display: none !important; /* 이벤트 구분선 숨김 */
+}
+
+.fc-list-sticky {
+    border: none !important; /* 추가적으로 border도 없앰 */
+}
+
+.fc-view-harness.fc-view-harness-passive{
+    margin:0px;
+}
+
+/*스케줄 형식 변환 : 캘랜더, 리스트형태*/
+
+.sche-types{
+    position: absolute;
+    top:111.5px;
+    right:48px;
+    
+    background-color: transparent;
+
+}
+
+.sche-type-container{
+    width : 27px;
+    height: 27px;
+    border-radius: 100%;
+    border-radius: 50%;
+    padding : 7px;
+    background-color:darkgray;
+}
+
+.sche-type-container:hover{
+    background-color:rgb(107 114 128);
+    border : 1px gray solid;
+}
+
+.sche-type-container:hover .sche-type{
+    background-color:rgb(106, 106, 106);
+}
+
+.sche-type{
+    width: 100%;
+    height:100%;
+    
+    background-color:darkgray;
+}
+
+.type-active{
+    background-color:rgb(106, 106, 106);
+}

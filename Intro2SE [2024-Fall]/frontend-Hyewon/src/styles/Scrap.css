@@ -1,0 +1,221 @@
+.notification-app {
+    max-width: 400px;
+    border: 1px solid lightgray; /* 디자인 확인용 */
+    overflow: hidden; /* 내용이 벗어나지 않도록 설정 */
+    background-color: #f5f5f5; /* 배경색 설정 */
+  }
+  
+  
+  .header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid lightgray;
+  }
+  
+  .header-title {
+    flex-grow: 1;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .back-button {
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .main-content {
+    display: flex;
+    flex: 1;
+  }
+  
+  .sidebar {
+    background-color: #f5f5f5;
+    height: 100vh;
+    border-right: 1px solid lightgray;
+    padding: 1rem;
+  }
+  
+  .kingo-logo img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  
+  .menu-item {
+    text-align: center;
+    padding: 10px 5px;
+    background-color: #f5f5f5;
+    border: 0.7px solid #666666;
+    cursor: pointer;
+    font-size:10px;
+    color: black;
+  }
+  
+  .menu-item.active {
+    background-color: #90C53F;
+    font-weight: bold;
+  }
+  
+  .notifications {
+    flex: 1;
+    padding: 1rem;
+  }
+  
+  .notifications-header {
+    display: flex;
+    justify-content: space-between;
+    /*align-items: center;*/
+    margin-bottom: 5px;
+    font-size: 15px;
+  }
+  
+  .sort-button,
+  .mark-all-read {
+    background-color: lightgray;
+    border: none;
+    padding: 0.3rem 0.3rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+    font-size: 12px
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3px;
+    border-bottom: 1px solid #666666; /* 입력창 아래 선 추가 */
+    padding-bottom: 5px; /* 선과 내용 간 간격 */
+  }
+  
+  .search-input {
+    flex: 1;
+    padding: 0.3rem;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    font-size: 10px;
+  }
+  
+  .search-button {
+    padding: 0.3rem 1rem;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    font-size: 10px
+  }
+  
+  .notification-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .notification-item {
+    background-color: darkgray; /* 읽은 공지사항: 진한 회색 */
+    border-radius: 4px; /* 둥근 테두리 */
+    padding: 5px; /* 내부 여백 */
+    display: flex; /* 별표와 텍스트를 나란히 배치 */
+    align-items: center; /* 세로 정렬 */
+    font-size: 9px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* 박스 그림자 */
+  }
+  
+  .notification-item.unread-notification {
+    background-color: #A0A0A0; 
+    color: #000; 
+  }
+  
+/* 읽은 공지사항 */
+  .notification-item.read-notification {
+    background-color: #E0E0E0; 
+    color: #000; 
+  }
+
+  .notification-title {
+    font-size: 10px; 
+    color: #333; 
+    flex-grow: 1; 
+    text-align: left;
+    padding-left: 3px;
+  }
+  
+ /* "new" 라벨 스타일 */
+.new-label {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: bold;
+    color: red; /* 빨간색 글씨 */
+    background-color: inherit;
+    /* background-color: #ffe4e1; 연한 빨간 배경 */
+    padding: 2px 5px;
+    border-radius: 5px;
+  }
+  
+ /* 별표 버튼 */
+.star-button {
+    margin-left: auto; /* 별표를 오른쪽 끝으로 정렬 */
+    color: #999;
+    cursor: pointer;
+  }
+  
+  .star-button.active {
+    color: #ffc107; /* 노란색 별표 */
+  }
+
+
+.notification-icon {
+    margin-left: 10px; /* 아이콘과 글씨 간 간격 */
+    cursor: pointer; /* 클릭 가능하게 변경 */
+    color: rgb(255, 204, 0); /* 항상 노란색 */
+    font-size: 12px; /* 별 크기 */
+  }
+
+  .scrap-notification-icon{
+    margin-left: 10px; /* 아이콘과 글씨 간 간격 */
+    cursor: pointer; /* 클릭 가능하게 변경 */
+    color: gray; 
+    font-size: 12px; /* 별 크기 */
+  }
+
+  .notification-bookmark {
+  position: absolute; /* 부모 컨테이너 내에서 고정 */
+  right: 10px; /* 오른쪽 여백 */
+  top: 50%; /* 컨테이너 높이의 중앙 */
+  transform: translateY(-50%); /* 정확히 중앙 정렬 */
+  font-size: 12px; /* 아이콘 크기 */
+  color: rgb(255, 0, 0); /* 기본 빨간색 */
+  cursor: pointer;
+}
+
+.notification-bookmark.gray {
+  color: rgb(192, 192, 192); /* 회색 북마크 색상 */
+}
+
+.scrap-notification-item {
+    background-color: gray; /* #79BA16; */
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    position: relative; /* 북마크 아이콘 위치를 설정 */
+    font-size: 9px;
+    border-radius: 4px; /* 둥근 테두리 */
+    padding: 5px; /* 내부 여백 */
+  }
+  
+  .scrap-notification-title {
+    flex: 1; /* 제목이 북마크 아이콘과 겹치지 않도록 */
+    color: #000; /* 검은색 글씨 */
+  }
+
+  .active2{
+    color:red;
+  }

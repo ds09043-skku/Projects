@@ -1,0 +1,35 @@
+.login-input-bar{
+    padding: 3px 8px;
+    margin: 0px 0px;
+    background-color: white;
+    border-radius: 5px;
+    border : 1px gray solid;
+    font-size: 13px;
+}
+
+.login-text{
+    padding-top: 0.5px;
+    font-size: 9px;
+}
+
+.log-btn{
+    background-color: rgb(130, 190, 40);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sim-log-btn{
+    background-color: rgb(23 37 84);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked { 
+    background-color: white;
+    color: green; 
+}
+
+.button-text{
+    font-size: 10px;
+}
